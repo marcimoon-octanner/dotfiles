@@ -13,8 +13,6 @@
   branch = auto
   diff = auto
   interactive = auto
-[commit]
-  gpgsign = true
 [push]
   default = current
 [branch]
@@ -69,22 +67,10 @@
   pu = push -u
   pl = pull --rebase
   new = log origin/master.. --reverse --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %an' --abbrev-commit --relative-date --decorate
-[diff]
-  tool = beyondcompare
-  renames = copies
-  renameLimit = 667
 [difftool]
   prompt = false
-[difftool "beyondcompare"]
-  cmd = bcomp $LOCAL $REMOTE -lefttitle='Old' -righttitle='New'
-  trustExitCode = true
-[merge]
-  tool = beyondcompare
 [mergetool]
   prompt = false
-[mergetool "beyondcompare"]
-  cmd = bcomp -automerge -iu -reviewconflicts -lefttitle='Local Changes' -righttitle='Remote Changes' -centertitle='Committed' $LOCAL $REMOTE $BASE $MERGED
-  trustExitCode = true
 [include]
   path = ~/.gitconfig.local
 [init]
